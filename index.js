@@ -1,3 +1,4 @@
+// Dependencies
 const express = require('express');
 const fs = require('fs');
 const util = require('util');
@@ -18,6 +19,8 @@ class DataSource {
 const app = express();
 const dataSource = new DataSource(config.dataFile);
 
+// Routes
 app.use('/leads', crudRouter(() => dataSource.data));
 
+// Start the HTTP server
 app.listen(config['bind-port'], config['bind-address']);

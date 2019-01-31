@@ -30,6 +30,9 @@ class Config {
             });
     }
 
+    /**
+     * Alias getter for the `data-file` config argument
+     */
     get dataFile() {
         return this["data-file"];
     }
